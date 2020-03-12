@@ -3834,6 +3834,7 @@ var Transmuxer = function () {
             ctl.on(_transmuxingEvents2.default.METADATA_ARRIVED, this._onMetaDataArrived.bind(this));
             ctl.on(_transmuxingEvents2.default.STATISTICS_INFO, this._onStatisticsInfo.bind(this));
             ctl.on(_transmuxingEvents2.default.RECOMMEND_SEEKPOINT, this._onRecommendSeekpoint.bind(this));
+            ctl.on(_transmuxingEvents2.default.DEMUX_MSG, this._onDemuxState.bind(this));
         }
     }
 
@@ -4003,6 +4004,15 @@ var Transmuxer = function () {
 
             Promise.resolve().then(function () {
                 _this10._emitter.emit(_transmuxingEvents2.default.RECOMMEND_SEEKPOINT, milliseconds);
+            });
+        }
+    }, {
+        key: '_onDemuxState',
+        value: function _onDemuxState(metadata) {
+            var _this11 = this;
+
+            Promise.resolve().then(function () {
+                _this11._emitter.emit(_transmuxingEvents2.default.DEMUX_MSG, metadata);
             });
         }
     }, {
@@ -6988,7 +6998,7 @@ Object.defineProperty(flvjs, 'version', {
     enumerable: true,
     get: function get() {
         // replaced by browserify-versionify transform
-        return '0.0.1';
+        return '0.0.3';
     }
 });
 
