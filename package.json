@@ -48,7 +48,7 @@
     "browserify-versionify": "^1.0.6",
     "del": "^2.2.0",
     "es6-promise": "^4.1.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-cli": "^1.2.2",
     "gulp-eslint": "^3.0.1",
     "gulp-header": "^1.8.8",
